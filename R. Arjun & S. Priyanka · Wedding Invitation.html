@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>R. Arjun &amp; S. Priyanka · Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+Tamil:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--mint:#d9efe3;--mint2:#f1faf5;--green:#1f7a3a;--maroon:#8e1220;--red:#b3122a;--gold:#d4a21c;--cream:#fff8ee;--ink:#4a2a1f;--card:#fffdf8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#2a1a14;--ink:#f3e3cf;--card:#38241b;--mint2:#2a1a14}}
+:root[data-theme="dark"]{--cream:#2a1a14;--ink:#f3e3cf;--card:#38241b;--mint2:#2a1a14}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+body{min-height:100%;background:var(--cream);color:var(--ink);font-family:'Noto Serif Tamil','Cinzel',serif;overflow-x:hidden}
+body.lock{overflow:hidden;height:100%}
+.stage{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 1s,visibility 1s;z-index:10;text-align:center}
+.hide{opacity:0;visibility:hidden;pointer-events:none}
+#cover{background:linear-gradient(#c9ead9,#e8f6ee 60%,#f5e9c9);padding:16px}
+#cover .om{width:64px;height:64px;border:2px solid #8aa58f;border-radius:50%;display:grid;place-items:center;color:#6b8a72;font-size:28px;animation:glow 3s infinite}
+#cover small{margin-top:8px;color:#4c6b54;font-size:13px}
+#cover h1{font-family:'Pacifico','Noto Serif Tamil',cursive;color:var(--green);font-size:clamp(34px,10vw,52px);line-height:1.3;margin:8px 0;text-shadow:0 2px 0 #fff8;animation:rise 1.6s both}
+#gop{width:min(78vw,300px);filter:drop-shadow(0 10px 14px #0003);animation:rise 2s .3s both}
+.btn{border:0;cursor:pointer;color:#fff;background:linear-gradient(#c3182f,#7d0d1c);padding:13px 26px;border-radius:30px;font:700 13px 'Cinzel',serif;letter-spacing:.12em;box-shadow:0 6px 16px #7d0d1c66,inset 0 1px #fff5;transition:transform .2s}
+.btn:active{transform:scale(.96)}.btn:focus-visible,.fab:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+#cover .btn{position:absolute;bottom:calc(28px + env(safe-area-inset-bottom,0px));animation:pulse 2s infinite}
+#cover.go #gop{filter:blur(8px);transform:scale(1.05);transition:1.2s}
+#cover.go h1,#cover.go .btn{opacity:0;transition:.6s}
+@keyframes glow{50%{box-shadow:0 0 22px #d4a21c88}}
+@keyframes pulse{50%{transform:scale(1.07)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+#intro{background:linear-gradient(#bfe3d1,#f1faf5);justify-content:flex-end;padding-bottom:0}
+.who{position:absolute;top:9%;opacity:0;transition:opacity 1.2s,transform 1.2s}
+.who.l{left:8%;text-align:left;transform:translateX(-30px)}.who.r{right:8%;text-align:right;transform:translateX(30px)}
+.who.show{opacity:1;transform:none}
+.who i{display:block;font:normal 11px 'Cinzel';letter-spacing:.2em;color:#4c6b54}
+.who b{display:block;font-size:clamp(24px,7vw,34px);color:#1d1d1d;margin:4px 0}
+.who span{font:12px 'Cinzel';color:#555}
+.fig{position:absolute;bottom:0;opacity:0;transition:opacity 1.4s;height:62%}
+.fig.show{opacity:1}#fb{left:10%}#fg{right:10%}
+#door{background:radial-gradient(#d9803a,#5a2010);overflow:hidden}
+.panel{position:absolute;top:0;bottom:0;width:50.5%;background:repeating-linear-gradient(90deg,#6b3a1d 0 3px,#7d4624 3px 30px),#6b3a1d;box-shadow:inset 0 0 40px #0008;transition:transform 2s cubic-bezier(.7,0,.2,1);z-index:2}
+.panel::after{content:"";position:absolute;inset:8% 10%;border:3px solid #c98a3d;border-radius:70px 70px 6px 6px;background:radial-gradient(circle,#e1b04f 2px,transparent 3px) 0 0/34px 34px}
+.panel.a{left:0}.panel.b{right:0}.panel.b::after{border-radius:70px 70px 6px 6px}
+#door.open .a{transform:translateX(-102%)}#door.open .b{transform:translateX(102%)}
+#glow{position:absolute;inset:0;background:radial-gradient(#fff,#ffe6a8 40%,#fff8ee);opacity:0;transition:opacity 1.6s .8s;z-index:1}#door.open #glow{opacity:1}
+#dtxt{position:absolute;top:8%;width:100%;z-index:3;color:#fff3d6;transition:opacity .6s}
+#dtxt .mono{width:56px;height:56px;margin:0 auto 6px;border:2px solid #f0d18a;border-radius:50%;display:grid;place-items:center;font:700 13px 'Cinzel'}
+#dtxt .t{font:12px 'Cinzel';letter-spacing:.25em}#dtxt .d{font:700 26px 'Pacifico';margin-top:4px}
+#door.open #dtxt,#door.open #seat{opacity:0}
+#seat{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:52%;z-index:3;transition:opacity .6s;animation:rise 2s both}
+#petals{position:absolute;inset:0;z-index:4;pointer-events:none}
+main{opacity:0;transition:opacity 1.5s}main.in{opacity:1}
+.sec{padding:56px 20px;max-width:560px;margin:0 auto;text-align:center;opacity:0;transform:translateY(26px);transition:.9s}
+.sec.in{opacity:1;transform:none}
+.hero{background:linear-gradient(var(--mint2),var(--cream));padding-top:34px}
+.hero .sri{display:inline-block;font-size:12px;padding:5px 16px;border-radius:20px;background:#fffc;color:#6b3a1d;box-shadow:0 2px 8px #0002}
+.hero h2{font-size:clamp(28px,8vw,40px);color:var(--maroon);margin:14px 0}
+.arch{width:min(82vw,330px);margin:0 auto;border:6px solid var(--gold);border-radius:999px 999px 18px 18px;overflow:hidden;position:relative;background:#5a1a1a;box-shadow:0 14px 30px #0004;aspect-ratio:3/4}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s;display:flex;align-items:flex-end;justify-content:center;background:radial-gradient(circle at 50% 35%,#e0a14a,#7a1d24 70%)}
+.slide.on{opacity:1}.slide svg{height:80%}
+.cap{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);background:#fff;color:#444;font-size:11px;padding:8px 14px;border-radius:20px;width:80%;z-index:2}
+.dots{position:absolute;bottom:12px;width:100%;display:flex;gap:6px;justify-content:center;z-index:2}.dots i{width:7px;height:7px;border-radius:9px;background:#fff8;transition:.4s}.dots i.on{width:20px;background:var(--gold)}
+.nm small{display:block;font:11px 'Cinzel';letter-spacing:.2em;color:#8a6a4c;margin-top:22px}
+.nm h3{font-size:30px;color:var(--maroon)}.nm p{font:12px 'Cinzel';opacity:.7}
+.amp{display:inline-block;margin:14px 0;padding:4px 18px;border:1px solid var(--gold);border-radius:20px;color:var(--gold);font:italic 13px 'Cinzel'}
+.card{background:var(--card);border:1px solid #e6cf9a;border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 6px 18px #0001;text-align:left}
+.row{display:flex;gap:12px;align-items:center;padding:8px 0}.ic{width:34px;height:34px;border-radius:50%;background:var(--maroon);color:#fff;display:grid;place-items:center;flex:none}
+.row b{display:block;font:700 15px 'Cinzel'}.row span{font-size:12px;opacity:.7}
+.quote{font-size:14px;line-height:1.9;color:var(--maroon);margin:18px 0}
+.pill{display:inline-block;font-size:11px;padding:5px 14px;border-radius:20px;border:1px solid var(--gold);background:#fff9;color:#7a5a1a;margin-bottom:10px}
+h2.t{font:700 28px 'Cinzel';letter-spacing:.04em;color:#3a2217;margin-bottom:6px}
+.sub{font-size:12px;opacity:.7;margin-bottom:22px}
+.ph{width:96px;height:96px;border-radius:50%;margin:0 auto 10px;border:4px solid var(--gold);box-shadow:0 0 0 3px #fff,0 4px 14px #d4a21c88;background:linear-gradient(#f6e3b4,#e7b867);overflow:hidden;display:flex;align-items:flex-end;justify-content:center}.ph svg{height:92%}
+.card.c{text-align:center}.card.c h4{font:700 18px 'Cinzel';color:var(--maroon)}.card.c p{font-size:12px;line-height:1.8;margin-top:6px;opacity:.85}
+.heart{width:30px;height:30px;border-radius:50%;background:var(--red);margin:6px auto;display:grid;place-items:center;font-size:14px;animation:pulse 1.4s infinite}
+.vline{width:1px;height:26px;background:var(--gold);margin:0 auto}
+.date{display:flex;align-items:center;gap:12px;background:#fffdf3;border-radius:12px;padding:12px;margin:10px 0;border:1px solid #eadcae}
+.date .b{background:var(--red);color:#fff;border-radius:6px;padding:4px 9px;font:700 18px 'Cinzel';line-height:1;text-align:center}.date .b small{display:block;font-size:8px}
+.date div:last-child{text-align:left;font-size:13px}
+.tl{position:relative;margin-left:16px;border-left:2px solid var(--gold);padding-left:20px;text-align:left}
+.tl .it{position:relative;background:var(--card);border:1px solid #e6cf9a;border-radius:12px;padding:12px 14px;margin:12px 0}
+.tl .it::before{content:"";position:absolute;left:-29px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--red);border:3px solid var(--cream)}
+.tl em{display:inline-block;background:var(--red);color:#fff;font:700 10px 'Cinzel';padding:2px 9px;border-radius:10px;font-style:normal;margin-bottom:4px}
+.tl .day{background:#fbefc4;border:1px solid var(--gold);border-radius:12px;padding:8px 14px;font-size:12px;margin:14px 0 4px;text-align:left}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.cd div{background:var(--card);border:1px solid var(--gold);border-radius:12px;padding:12px 2px;position:relative}
+.cd div::before{content:"🪔";position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:16px}
+.cd b{display:block;font:700 26px 'Cinzel';color:var(--maroon)}.cd span{font-size:10px;opacity:.7}
+.map{height:120px;border-radius:12px;margin:12px 0;background:linear-gradient(#cfe6f4,#e9f2d8);position:relative;overflow:hidden}
+.map::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(35deg,transparent 0 22px,#fff9 22px 26px),repeating-linear-gradient(-55deg,transparent 0 30px,#fff7 30px 33px)}
+.map::after{content:"📍";position:absolute;top:36%;left:48%;font-size:26px;animation:pulse 1.6s infinite}
+.btn.w{display:block;width:100%;margin:10px 0}.btn.o{background:#fff;color:var(--maroon);border:1px solid var(--gold);box-shadow:none}
+label{display:block;font:700 11px 'Cinzel';margin:14px 0 5px;text-align:left}
+input,textarea{width:100%;padding:11px;border:1px solid #e0cfa6;border-radius:10px;background:var(--cream);color:var(--ink);font:14px 'Noto Serif Tamil',serif}
+.opts button{width:100%;text-align:left;padding:11px 14px;margin:5px 0;border-radius:10px;border:1px solid #e0cfa6;background:var(--card);color:var(--ink);font:13px 'Noto Serif Tamil';cursor:pointer}
+.opts button.on{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.g{display:flex;gap:8px}.g button{flex:1;padding:9px;border-radius:10px;border:1px solid #e0cfa6;background:var(--card);color:var(--ink);cursor:pointer;font:700 14px 'Cinzel'}.g button.on{background:var(--gold);color:#fff}
+.btn.ok{background:linear-gradient(#22b038,#128a28)}
+.fab{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);background:#fffd;color:var(--maroon);display:none;place-items:center;cursor:pointer;z-index:20;font-size:16px}
+#mus{left:14px}#top{right:14px}body.ready .fab{display:grid}
+footer{padding:30px 20px 90px;text-align:center;font-size:12px;opacity:.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body class="lock">
+
+<section id="cover" class="stage">
+  <div class="om">ௐ</div><small>॥ ஸ்ரீ விநாயகர் துணை ॥</small>
+  <h1>திருமண<br>அழைப்பிதழ்</h1>
+  <div id="gop"></div>
+  <button class="btn" id="open">OPEN INVITATION ✦</button>
+</section>
+
+<section id="intro" class="stage hide">
+  <div class="who l" id="wb"><i>மணமகள்</i><b>S. பிரியங்கா</b><span>Priyanka, M.Tech</span></div>
+  <div class="who r" id="wg"><i>மணமகன்</i><b>R. அர்ஜுன்</b><span>Arjun, B.Tech</span></div>
+  <div class="fig" id="fb"></div><div class="fig" id="fg"></div>
+</section>
+
+<section id="door" class="stage hide">
+  <div id="glow"></div>
+  <div class="panel a"></div><div class="panel b"></div>
+  <div id="dtxt"><div class="mono">R&amp;P</div><div class="t">WEDDING CEREMONY</div><div class="d">12th December 2026</div></div>
+  <div id="seat"></div>
+  <canvas id="petals"></canvas>
+</section>
+
+<main id="main">
+  <section class="sec hero">
+    <span class="pill">॥ ஸ்ரீ விநாயகர் துணை ॥</span>
+    <h2>திருமண அழைப்பிதழ்</h2>
+    <div class="arch" id="arch"><div class="cap" id="cap"></div><div class="dots" id="dots"></div></div>
+    <div class="nm">
+      <small>மணமகன் (Groom)</small><h3>R. அர்ஜுன்</h3><p>R. ARJUN, B.Tech</p>
+      <span class="amp">weds</span>
+      <small>மணமகள் (Bride)</small><h3>S. பிரியங்கா</h3><p>S. PRIYANKA, M.Tech</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="card">
+      <div class="date"><div class="b">12<small>DEC</small></div><div><b>12 December 2026</b><br>சனிக்கிழமை</div></div>
+      <div class="row"><div class="ic">⏰</div><div><b>6:30 AM – 8:00 AM</b><span>முகூர்த்த நேரம் · Muhurtham</span></div></div>
+      <div class="row"><div class="ic">📍</div><div><b>Sri Raja Rajeshwari Thirumana Mandapam</b><span>சேலம், தமிழ்நாடு</span></div></div>
+    </div>
+    <p class="quote">“இரு மனங்கள் இணையும் இந்த இனிய நாளில்,<br>உற்றார் உறவினர் நண்பர்களுடன் வந்து<br>எங்களை ஆசீர்வதிக்க அன்புடன் அழைக்கிறோம்.”</p>
+  </section>
+
+  <section class="sec">
+    <span class="pill">நம் காதல் கதை</span>
+    <h2 class="t">Our Sacred Love Story</h2><p class="sub">Two families, one beautiful beginning</p>
+    <div class="card c"><div class="ph" id="phg"></div><span class="pill">மணமகன் · The Groom</span><h4>R. Arjun, B.Tech</h4><p>Gentle, grounded and always the first to laugh. He found his home in her smile.</p></div>
+    <div class="vline"></div><div class="heart">💛</div><div class="vline"></div>
+    <div class="card c"><div class="ph" id="phb"></div><span class="pill">மணமகள் · The Bride</span><h4>S. Priyanka, M.Tech</h4><p>Graceful, curious and fearless. She turned every ordinary day into a celebration.</p></div>
+  </section>
+
+  <section class="sec" style="background:linear-gradient(var(--cream),#fbefc4 50%,var(--cream))">
+    <span class="pill">மங்கல நிகழ்வுகள்</span>
+    <h2 class="t">Auspicious Ceremonies</h2><p class="sub">Join us for both days of celebration</p>
+    <div class="card c"><span class="pill">வரவேற்பு</span><h4>RECEPTION</h4>
+      <div class="date"><div class="b">11<small>DEC</small></div><div>11.12.2026<br>வெள்ளிக்கிழமை · 6:00 PM</div></div></div>
+    <div class="card c"><span class="pill">திருமணம்</span><h4>WEDDING</h4>
+      <div class="date"><div class="b">12<small>DEC</small></div><div>12.12.2026<br>சனிக்கிழமை · 6:30 AM</div></div></div>
+  </section>
+
+  <section class="sec">
+    <span class="pill">நிகழ்ச்சி நிரல்</span>
+    <h2 class="t">Sacred Wedding Timeline</h2><p class="sub">The day, moment by moment</p>
+    <div class="tl">
+      <div class="day">சனிக்கிழமை · 12 டிசம்பர் 2026</div>
+      <div class="it"><em>4:30 – 5:30 AM</em><br>நிச்சயதார்த்தம்</div>
+      <div class="it"><em>6:30 – 8:00 AM</em><br>முகூர்த்தம் · தாலி கட்டுதல்</div>
+      <div class="it"><em>8:30 AM</em><br>சம்பந்தி விருந்து</div>
+      <div class="it">தங்கள் நல்வருகை எங்கள் விருப்பம்<br><small>Your presence is our blessing</small></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <span class="pill">சுபமுகூர்த்த நேரம்</span>
+    <h2 class="t">Auspicious Countdown</h2><p class="sub">12 டிசம்பர் 2026 · 6:30 AM</p>
+    <div class="cd"><div><b id="d">--</b><span>நாட்கள்</span></div><div><b id="h">--</b><span>மணி</span></div><div><b id="m">--</b><span>நிமிடம்</span></div><div><b id="s">--</b><span>விநாடி</span></div></div>
+    <a class="btn w" id="cal" target="_blank" rel="noopener" style="text-decoration:none">ADD TO CALENDAR</a>
+    <button class="btn w o" id="share">வாழ்த்தைப் பகிர்க · SHARE</button>
+  </section>
+
+  <section class="sec">
+    <span class="pill">திருமண மண்டபம்</span>
+    <h2 class="t">Sri Raja Rajeshwari<br>Thirumana Mandapam</h2><p class="sub">Salem, Tamil Nadu</p>
+    <div class="map"></div>
+    <a class="btn w" id="dir" target="_blank" rel="noopener" style="text-decoration:none">GET DIRECTIONS</a>
+    <button class="btn w o" id="copy">COPY ADDRESS</button>
+  </section>
+
+  <section class="sec">
+    <span class="pill">அன்பும் ஆசீர்வாதமும்</span>
+    <h2 class="t">Confirm Your Presence<br>&amp; Wishes</h2><p class="sub">Let us know you are coming</p>
+    <div class="card">
+      <label>Your Name · உங்கள் பெயர்</label><input id="rn" autocomplete="name">
+      <label>Place &amp; City · ஊர்</label><input id="rc">
+      <label>Will you be attending? · வருகை</label>
+      <div class="opts" id="att"><button class="on" data-v="With Family">👪 With Family · குடும்பத்துடன்</button><button data-v="Will Attend">🙂 Will Attend · வருவேன்</button><button data-v="Wishes Only">💌 Wishes Only · வாழ்த்துகள் மட்டும்</button></div>
+      <label>Number of Guests · விருந்தினர்கள்</label>
+      <div class="g" id="gst"><button>1</button><button class="on">2</button><button>3</button><button>4</button><button>5+</button></div>
+      <label>Your Message · வாழ்த்துச் செய்தி</label><textarea id="rm" rows="3"></textarea>
+      <button class="btn w ok" id="sub">✔ SUBMIT</button>
+      <p id="thx" style="display:none;margin-top:8px;color:var(--green);font-size:13px">நன்றி! Your reply is ready to send on WhatsApp.</p>
+    </div>
+  </section>
+  <footer>R. Arjun &amp; S. Priyanka · 12.12.2026<br>With love and blessings</footer>
+</main>
+
+<button class="fab" id="mus" aria-label="Toggle music">🔇</button>
+<button class="fab" id="top" aria-label="Back to top">▲</button>
+
+<script>
+// ===== EDIT HERE =====
+const C={phone:"919999999999",venue:"Sri Raja Rajeshwari Thirumana Mandapam, Salem",date:"2026-12-12T06:30:00+05:30"};
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// gopuram
+(function(){const col=['#f2a7b4','#f6c35b','#7fc8a9','#f08a5d','#9ec5f0','#e56b8a'];let y=8,w=70,h='';
+for(let i=0;i<9;i++){const x=100-w/2,hh=i<2?16:22;h+=`<rect x="${x}" y="${y}" width="${w}" height="${hh}" rx="3" fill="${col[i%6]}" stroke="#9a5b1c" stroke-width="1.2"/>`;
+for(let k=0;k<Math.floor(w/10);k++)h+=`<circle cx="${x+7+k*10}" cy="${y+hh/2}" r="2.6" fill="#fff8" stroke="#9a5b1c" stroke-width=".5"/>`;
+y+=hh+2;w+=i<3?12:9}
+h+=`<rect x="${100-w/2-6}" y="${y}" width="${w+12}" height="12" fill="#c9852f"/>`;
+for(let i=0;i<5;i++)h+=`<path d="M${88+i*6} 8 l3 -9 l3 9z" fill="#d4a21c"/>`;
+$('#gop').innerHTML=`<svg viewBox="0 -4 200 ${y+18}">${h}</svg>`})();
+// people
+function person(kind){const g=kind==='g';const body=g?'#fff':'#1c7a4f',trim=g?'#d4a21c':'#d4a21c';
+return `<svg viewBox="0 0 120 300"><ellipse cx="60" cy="38" rx="22" ry="26" fill="#e3b08a"/><path d="M36 34c0-22 48-22 48 0c-6-10-42-10-48 0z" fill="#2a1a14"/>
+<path d="M30 70h60l8 120H22z" fill="${body}" stroke="#0002"/><path d="M${g?'38':'40'} 70l22 60l22-60" fill="none" stroke="${trim}" stroke-width="5"/>
+<path d="M24 190h72l6 104H18z" fill="${g?'#fff':'#16603e'}" stroke="#0002"/><path d="M${g?'60':'24'} 190v104" stroke="${trim}" stroke-width="${g?3:6}"/></svg>`}
+const seat=`<svg viewBox="0 0 260 300"><g transform="translate(10 40) scale(.8)">${person('g').replace(/<\/?svg[^>]*>/g,'')}</g><g transform="translate(130 60) scale(.76)">${person('b').replace(/<\/?svg[^>]*>/g,'').replace(/#1c7a4f|#16603e/g,'#a8132a')}</g></svg>`;
+$('#fg').innerHTML=person('g');$('#fb').innerHTML=person('b');$('#seat').innerHTML=seat;
+$('#phg').innerHTML=person('g');$('#phb').innerHTML=person('b').replace(/#1c7a4f|#16603e/g,'#a8132a');
+// slides
+const caps=['இரு மனங்கள் இணையும் திருநாள்','The Start · Our Sacred Bond','Two souls, one journey'];
+caps.forEach((t,i)=>{const s=document.createElement('div');s.className='slide'+(i?'':' on');s.innerHTML=seat;$('#arch').prepend(s);const d=document.createElement('i');if(!i)d.className='on';$('#dots').append(d)});
+let si=0;const sl=()=>$$('.slide'),dt=()=>$$('#dots i');$('#cap').textContent=caps[0];
+setInterval(()=>{sl()[si].classList.remove('on');dt()[si].classList.remove('on');si=(si+1)%caps.length;sl()[si].classList.add('on');dt()[si].classList.add('on');$('#cap').textContent=caps[si]},3200);
+// petals
+const cv=$('#petals'),cx=cv.getContext('2d');let P=[],run=false;
+function rs(){cv.width=innerWidth;cv.height=innerHeight}rs();addEventListener('resize',rs);
+function loop(){if(!run)return;cx.clearRect(0,0,cv.width,cv.height);P.forEach(p=>{p.y+=p.v;p.x+=Math.sin(p.y/40+p.o)*.8;p.r+=p.s;if(p.y>cv.height+20){p.y=-20;p.x=Math.random()*cv.width}
+cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.beginPath();cx.ellipse(0,0,p.z,p.z*.6,0,0,7);cx.fill();cx.restore()});requestAnimationFrame(loop)}
+function petals(){P=Array.from({length:42},()=>({x:Math.random()*cv.width,y:Math.random()*cv.height*-1,v:1+Math.random()*2,z:5+Math.random()*6,o:Math.random()*6,r:0,s:(Math.random()-.5)*.1,c:['#e11d48','#f43f5e','#be123c'][Math.floor(Math.random()*3)]}));run=true;loop()}
+// sequence
+const show=e=>e.classList.remove('hide'),hide=e=>e.classList.add('hide');
+$('#open').onclick=()=>{$('#cover').classList.add('go');startAudio();
+setTimeout(()=>{show($('#intro'));hide($('#cover'))},1100);
+setTimeout(()=>{$('#wb').classList.add('show');$('#fb').classList.add('show')},1800);
+setTimeout(()=>{$('#wg').classList.add('show');$('#fg').classList.add('show')},3800);
+setTimeout(()=>{show($('#door'));hide($('#intro'));petals()},6800);
+setTimeout(()=>$('#door').classList.add('open'),11000);
+setTimeout(()=>{$('#main').classList.add('in');hide($('#door'));document.body.classList.remove('lock');document.body.classList.add('ready');run=false;io()},13200)};
+function io(){const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');o.unobserve(x.target)}}),{threshold:.12});$$('.sec').forEach(s=>o.observe(s))}
+// countdown
+const T=new Date(C.date).getTime();
+setInterval(()=>{let l=Math.max(0,T-Date.now())/1000;const f=(id,v)=>$(id).textContent=String(Math.floor(v)).padStart(2,'0');f('#d',l/86400);f('#h',l%86400/3600);f('#m',l%3600/60);f('#s',l%60)},1000);
+$('#cal').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Arjun & Priyanka Wedding')+'&dates=20261211T230000Z/20261212T023000Z&location='+encodeURIComponent(C.venue);
+$('#dir').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.venue);
+$('#copy').onclick=e=>{try{navigator.clipboard.writeText(C.venue)}catch(_){}e.target.textContent='COPIED ✔'};
+$('#share').onclick=()=>{const t='You are invited to the wedding of Arjun & Priyanka on 12 December 2026.';try{navigator.share?navigator.share({title:'Wedding Invitation',text:t,url:location.href}):navigator.clipboard.writeText(t+' '+location.href)}catch(_){}};
+// rsvp
+$$('#att button').forEach(b=>b.onclick=()=>{$$('#att button').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+$$('#gst button').forEach(b=>b.onclick=()=>{$$('#gst button').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+$('#sub').onclick=()=>{const n=$('#rn').value.trim();if(!n){$('#rn').focus();$('#rn').placeholder='Please enter your name';return}
+const msg=`Wedding RSVP\nName: ${n}\nPlace: ${$('#rc').value}\nAttending: ${$('#att .on').dataset.v}\nGuests: ${$('#gst .on').textContent}\nMessage: ${$('#rm').value}`;
+$('#thx').style.display='block';window.open('https://wa.me/'+C.phone+'?text='+encodeURIComponent(msg),'_blank')};
+// music (soft generated drone; replace with a real song if hosting yourself)
+let ac,on=false,g;
+function startAudio(){try{ac=new(window.AudioContext||window.webkitAudioContext)();g=ac.createGain();g.gain.value=0;g.connect(ac.destination);
+[196,247,294,392].forEach((f,i)=>{const o=ac.createOscillator();o.type='sine';o.frequency.value=f;const v=ac.createGain();v.gain.value=.05/(i+1);o.connect(v).connect(g);o.start()});
+g.gain.linearRampToValueAtTime(.6,ac.currentTime+3);on=true;$('#mus').textContent='🔊'}catch(_){}}
+$('#mus').onclick=()=>{if(!ac)return startAudio();on=!on;g.gain.value=on?.6:0;$('#mus').textContent=on?'🔊':'🔇'};
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
